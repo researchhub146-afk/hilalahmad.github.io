@@ -10,7 +10,12 @@ import SEO from '../components/SEO';
 
 const mockData = {
     user: { name: 'Hilal Ahmad', bio: 'A passionate developer building amazing digital experiences.' },
-    analytics: { profile_views: 1250, projects_completed: 15, certifications_earned: 4, client_satisfaction: 98 },
+    analytics: [
+        { id: 1, icon: 'users', metric_value: 1250, metric_name: 'Profile Views', category: 'Traffic' },
+        { id: 2, icon: 'code', metric_value: 15, metric_name: 'Projects Completed', category: 'Engineering' },
+        { id: 3, icon: 'target', metric_value: 4, metric_name: 'Certifications', category: 'Learning' },
+        { id: 4, icon: 'trending-up', metric_value: 98, metric_name: 'Client Satisfaction', category: 'Quality' }
+    ],
     projects: [
         { id: 1, title: 'E-Commerce Platform', description: 'A full-stack e-commerce solution with payment integration.', category: 'Web', tech_stack: ['React', 'Laravel', 'MySQL'] },
         { id: 2, title: 'Task Management App', description: 'Real-time collaborative task manager.', category: 'Web', tech_stack: ['React', 'Node.js', 'MongoDB'] },
