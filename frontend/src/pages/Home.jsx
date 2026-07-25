@@ -50,11 +50,11 @@ const Home = () => {
             <HeroSection name={data?.user?.name} />
 
             <div className="container mx-auto px-4 pb-24">
-                <SkillMatrix />
+                <div id="skills"><SkillMatrix /></div>
 
-                <AnalyticsCharts analytics={data?.analytics} />
+                <div id="analytics"><AnalyticsCharts analytics={data?.analytics} /></div>
 
-                <section className="py-24">
+                <section id="projects" className="py-24">
                     <h2 className="text-4xl font-bold text-center mb-16 underline decoration-primary underline-offset-8">
                         Engineering Projects
                     </h2>
@@ -77,9 +77,9 @@ const Home = () => {
 
                 <ProjectGallery projects={data?.projects} />
 
-                <CertificationShowcase certifications={data?.certifications} />
+                <div id="certs"><CertificationShowcase certifications={data?.certifications} /></div>
 
-                <ContactForm />
+                <div id="contact"><ContactForm /></div>
 
                 <footer className="text-center py-12 border-t border-white/5 text-slate-500 text-sm">
                     &copy; {new Date().getFullYear()} {data?.user?.name}. Built with Laravel 11 & React 19.
