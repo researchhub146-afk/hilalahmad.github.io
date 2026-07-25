@@ -15,10 +15,30 @@ const ContactForm = () => {
         e.preventDefault();
         setStatus('sending');
         try {
-            await api.post('/contact', formData);
-            setStatus('success');
-            setFormData({ name: '', email: '', subject: '', message: '' });
-            setTimeout(() => setStatus('idle'), 6000);
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    // Replace this with your Web3Forms access key
+                    access_key: "YOUR_WEB3FORMS_ACCESS_KEY",
+                    name: formData.name,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                }),
+            });
+            const result = await response.json();
+            
+            if (result.success) {
+                setStatus('success');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                setTimeout(() => setStatus('idle'), 6000);
+            } else {
+                throw new Error("Form submission failed");
+            }
         } catch (err) {
             setStatus('error');
             setTimeout(() => setStatus('idle'), 5000);

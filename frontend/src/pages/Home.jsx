@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import api from '../services/api';
 import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
 import SkillMatrix from '../components/SkillMatrix';
 import CertificationShowcase from '../components/CertificationShowcase';
 import ProjectGallery from '../components/ProjectGallery';
@@ -56,6 +57,7 @@ const Home = () => {
                 description={data?.user?.bio}
             />
             <HeroSection name={data?.user?.name} />
+            <AboutSection bio={data?.user?.bio} />
 
             <div className="container mx-auto px-4 pb-24">
                 <div id="skills"><SkillMatrix /></div>
