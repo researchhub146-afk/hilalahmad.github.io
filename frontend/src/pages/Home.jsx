@@ -9,21 +9,24 @@ import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 
 const mockData = {
-    user: { name: 'Hilal Ahmad', bio: 'A passionate developer building amazing digital experiences.' },
+    user: { 
+        name: 'Premium Professional', 
+        bio: 'Multi-disciplinary Engineer, Designer, and Digital Marketer with over 10 years of experience building enterprise-grade digital solutions.' 
+    },
     analytics: [
-        { id: 1, icon: 'users', metric_value: 1250, metric_name: 'Profile Views', category: 'Traffic' },
-        { id: 2, icon: 'code', metric_value: 15, metric_name: 'Projects Completed', category: 'Engineering' },
-        { id: 3, icon: 'target', metric_value: 4, metric_name: 'Certifications', category: 'Learning' },
-        { id: 4, icon: 'trending-up', metric_value: 98, metric_name: 'Client Satisfaction', category: 'Quality' }
+        { id: 1, icon: 'users', metric_value: 961, metric_name: 'LinkedIn Connections', category: 'Network' },
+        { id: 2, icon: 'code', metric_value: 4886, metric_name: 'GitHub Commits', category: 'Engineering' },
+        { id: 3, icon: 'trending-up', metric_value: 3077, metric_name: 'Twitter Followers', category: 'Social' },
+        { id: 4, icon: 'target', metric_value: 1943, metric_name: 'Portfolio Visits', category: 'Traffic' }
     ],
     projects: [
-        { id: 1, title: 'E-Commerce Platform', description: 'A full-stack e-commerce solution with payment integration.', category: 'Web', tech_stack: ['React', 'Laravel', 'MySQL'] },
-        { id: 2, title: 'Task Management App', description: 'Real-time collaborative task manager.', category: 'Web', tech_stack: ['React', 'Node.js', 'MongoDB'] },
-        { id: 3, title: 'Portfolio Website', description: 'Personal branding and portfolio platform.', category: 'Design', tech_stack: ['React', 'TailwindCSS'] }
+        { id: 1, title: 'Nexus Cloud ERP', description: 'A comprehensive enterprise resource planning system with a focus on real-time data visualization and cloud scalability.', category: 'Development', tech_stack: ['Laravel 11', 'React 19', 'MySQL'] },
+        { id: 2, title: 'Aura Brand Identity', description: 'Sophisticated visual identity system for a sustainable lifestyle brand, including logo, typography, and brand guidelines.', category: 'Design', tech_stack: ['Adobe Illustrator', 'Figma'] },
+        { id: 3, title: 'Pulse Social App', description: 'A mobile-first social networking platform optimized for real-time engagement and premium community interactions.', category: 'UX/UI', tech_stack: ['React Native', 'Firebase'] }
     ],
     certifications: [
-        { id: 1, name: 'AWS Certified Solutions Architect', issuing_organization: 'Amazon', issue_date: '2023-05-01' },
-        { id: 2, name: 'Full Stack Developer', issuing_organization: 'Coursera', issue_date: '2022-11-15' }
+        { id: 1, name: 'Azure Solutions Architect', issuing_organization: 'Microsoft', issue_date: '2023-01-01', credential_id: 'AZ-305' },
+        { id: 2, name: 'Cisco Certified Network Associate', issuing_organization: 'Cisco', issue_date: '2022-06-15', credential_id: 'CCNA-200-301' }
     ]
 };
 
