@@ -17,8 +17,8 @@ const mockData = {
         { id: 3, title: 'Portfolio Website', description: 'Personal branding and portfolio platform.', category: 'Design', tech_stack: ['React', 'TailwindCSS'] }
     ],
     certifications: [
-        { id: 1, name: 'AWS Certified Solutions Architect', issuer: 'Amazon', date: '2023-05' },
-        { id: 2, name: 'Full Stack Developer', issuer: 'Coursera', date: '2022-11' }
+        { id: 1, name: 'AWS Certified Solutions Architect', issuing_organization: 'Amazon', issue_date: '2023-05-01' },
+        { id: 2, name: 'Full Stack Developer', issuing_organization: 'Coursera', issue_date: '2022-11-15' }
     ]
 };
 
