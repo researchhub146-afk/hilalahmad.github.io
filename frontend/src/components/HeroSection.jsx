@@ -46,6 +46,12 @@ const HeroSection = ({ name }) => {
                 transition={{ duration: 0.8 }}
                 className="z-10 flex flex-col items-center"
             >
+                <div className="mb-8 relative">
+                    <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 p-1 bg-white/5">
+                        <img src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Profile" className="w-full h-full object-cover rounded-full" />
+                    </div>
+                </div>
+
                 <div className="flex gap-4 mb-8">
                     <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-all shadow-lg" title="LinkedIn">
                         <Briefcase className="w-5 h-5" />
