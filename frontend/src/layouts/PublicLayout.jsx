@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { Menu, X, Github, Linkedin, Twitter, ExternalLink } from 'lucide-react';
+import { Menu, X, Code, Briefcase, MessageCircle, ExternalLink } from 'lucide-react';
 
 const PublicLayout = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,9 +88,9 @@ const PublicLayout = () => {
                                 A high-performance personal branding platform for elite multi-disciplinary professionals. Standalone, enterprise-grade, and ready for production.
                             </p>
                             <div className="flex gap-4">
-                                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-primary/20 hover:text-primary transition-all"><Twitter className="w-5 h-5" /></a>
-                                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-primary/20 hover:text-primary transition-all"><Linkedin className="w-5 h-5" /></a>
-                                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-primary/20 hover:text-primary transition-all"><Github className="w-5 h-5" /></a>
+                                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-primary/20 hover:text-primary transition-all"><MessageCircle className="w-5 h-5" /></a>
+                                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-primary/20 hover:text-primary transition-all"><Briefcase className="w-5 h-5" /></a>
+                                <a href="#" className="p-3 bg-white/5 rounded-xl hover:bg-primary/20 hover:text-primary transition-all"><Code className="w-5 h-5" /></a>
                             </div>
                         </div>
 
