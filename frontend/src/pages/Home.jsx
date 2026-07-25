@@ -8,6 +8,20 @@ import AnalyticsCharts from '../components/AnalyticsCharts';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
 
+const mockData = {
+    user: { name: 'Hilal Ahmad', bio: 'A passionate developer building amazing digital experiences.' },
+    analytics: { profile_views: 1250, projects_completed: 15, certifications_earned: 4, client_satisfaction: 98 },
+    projects: [
+        { id: 1, title: 'E-Commerce Platform', description: 'A full-stack e-commerce solution with payment integration.', category: 'Web', tech_stack: ['React', 'Laravel', 'MySQL'] },
+        { id: 2, title: 'Task Management App', description: 'Real-time collaborative task manager.', category: 'Web', tech_stack: ['React', 'Node.js', 'MongoDB'] },
+        { id: 3, title: 'Portfolio Website', description: 'Personal branding and portfolio platform.', category: 'Design', tech_stack: ['React', 'TailwindCSS'] }
+    ],
+    certifications: [
+        { id: 1, name: 'AWS Certified Solutions Architect', issuer: 'Amazon', date: '2023-05' },
+        { id: 2, name: 'Full Stack Developer', issuer: 'Coursera', date: '2022-11' }
+    ]
+};
+
 const Home = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -19,7 +33,8 @@ const Home = () => {
                 setLoading(false);
             })
             .catch(err => {
-                console.error(err);
+                console.error("Backend not running, using mock data.", err);
+                setData(mockData);
                 setLoading(false);
             });
     }, []);
