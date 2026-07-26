@@ -9,6 +9,13 @@
   --color-surface: #1e293b;
 
   --font-sans: "Inter", "system-ui", "-apple-system", "sans-serif";
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-33.33333%); }
+  }
 }
 
 @layer base {

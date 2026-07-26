@@ -11,6 +11,8 @@ import SEO from '../components/SEO';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import EducationSection from '../components/EducationSection';
 import PublicationsSection from '../components/PublicationsSection';
+import TechMarquee from '../components/TechMarquee';
+import TestimonialsSection from '../components/TestimonialsSection';
 
 const mockData = {
     user: { 
@@ -75,6 +77,7 @@ const Home = () => {
                 description={data?.user?.bio}
             />
             <HeroSection name={data?.user?.name} />
+            <TechMarquee />
             <AboutSection bio={data?.user?.bio} />
 
             <div className="container mx-auto px-4 pb-24">
@@ -112,6 +115,8 @@ const Home = () => {
                 <ProjectGallery projects={data?.projects} />
 
                 <div id="certs"><CertificationShowcase certifications={data?.certifications} /></div>
+                
+                <TestimonialsSection />
 
                 <div id="contact"><ContactForm /></div>
 

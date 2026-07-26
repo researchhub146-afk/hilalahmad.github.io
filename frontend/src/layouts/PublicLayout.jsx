@@ -1,19 +1,50 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Menu, X, Code, Briefcase, MessageCircle, ExternalLink } from 'lucide-react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 const PublicLayout = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const updateMousePosition = (e) => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+        };
+        window.addEventListener('mousemove', updateMousePosition);
+        return () => window.removeEventListener('mousemove', updateMousePosition);
+    }, []);
 
     const navLinks = [
+        { name: 'About', href: '#about' },
         { name: 'Projects', href: '#projects' },
         { name: 'Skills', href: '#skills' },
         { name: 'Certifications', href: '#certs' },
-        { name: 'Analytics', href: '#analytics' },
     ];
 
     return (
         <div className="min-h-screen bg-background text-slate-100 selection:bg-primary selection:text-white">
+            {/* Custom Mouse Glow */}
+            <div 
+                className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+                style={{
+                    background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(14, 165, 233, 0.04), transparent 80%)`
+                }}
+            />
+
+            {/* Scroll Progress Bar */}
+            <motion.div
+                className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary origin-left z-[100]"
+                style={{ scaleX }}
+            />
+
             {/* Header / Navigation */}
             <nav className="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
                 <div className="container mx-auto px-6 py-5 flex justify-between items-center">
