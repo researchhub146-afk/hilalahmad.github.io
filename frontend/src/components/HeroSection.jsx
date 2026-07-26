@@ -94,15 +94,14 @@ const HeroSection = ({ name }) => {
                 </div>
 
                 <div className="mt-12 flex flex-wrap gap-4 justify-center">
+                    <a href={`${import.meta.env.BASE_URL}Hilal_CV.pdf`} download="Hilal_Ahmad_CV.pdf" className="px-8 py-4 bg-secondary rounded-full font-bold shadow-lg shadow-secondary/20 hover:scale-105 transition-transform flex items-center gap-2">
+                        <Download className="w-5 h-5" /> Download CV
+                    </a>
                     <a href="#projects" className="px-8 py-4 bg-primary rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform flex items-center gap-2">
                         View Projects
                     </a>
                     <a href="#contact" className="px-8 py-4 glass rounded-full font-bold hover:bg-white/10 transition-colors flex items-center gap-2">
-                        Get In Touch
-                    </a>
-                    <a href="/hilalahmad.github.io/resume.pdf" download="Resume.pdf" className="px-8 py-4 bg-white/5 border border-white/10 rounded-full font-bold hover:bg-white/10 transition-colors flex items-center gap-2 text-slate-300 hover:text-white">
-                        <Download className="w-5 h-5" />
-                        Download CV
+                        Contact Me
                     </a>
                 </div>
             </motion.div>

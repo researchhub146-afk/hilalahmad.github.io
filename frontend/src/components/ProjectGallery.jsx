@@ -7,7 +7,7 @@ const ProjectGallery = ({ projects }) => {
     return (
         <section className="py-24">
             <h2 className="text-4xl font-bold text-center mb-16 underline decoration-primary underline-offset-8">
-                Graphic Design Gallery
+                Software & Interface Showcase
             </h2>
 
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 max-w-6xl mx-auto">
