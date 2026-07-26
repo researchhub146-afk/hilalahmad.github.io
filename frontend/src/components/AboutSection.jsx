@@ -30,18 +30,18 @@ const AboutSection = ({ bio }) => {
 
                     <div className="mt-8 flex gap-6">
                         <div className="flex flex-col">
-                            <span className="text-3xl font-black text-white">10+</span>
+                            <span className="text-3xl font-black text-white">4+</span>
                             <span className="text-sm text-slate-500 uppercase font-bold">Years Exp.</span>
                         </div>
                         <div className="w-px bg-white/10"></div>
                         <div className="flex flex-col">
-                            <span className="text-3xl font-black text-white">50+</span>
-                            <span className="text-sm text-slate-500 uppercase font-bold">Projects</span>
+                            <span className="text-3xl font-black text-white">150+</span>
+                            <span className="text-sm text-slate-500 uppercase font-bold">Mentored</span>
                         </div>
                         <div className="w-px bg-white/10"></div>
                         <div className="flex flex-col">
                             <span className="text-3xl font-black text-white">100%</span>
-                            <span className="text-sm text-slate-500 uppercase font-bold">Commitment</span>
+                            <span className="text-sm text-slate-500 uppercase font-bold">Cashless</span>
                         </div>
                     </div>
                 </motion.div>

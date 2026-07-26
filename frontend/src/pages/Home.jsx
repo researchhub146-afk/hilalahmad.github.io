@@ -11,8 +11,8 @@ import SEO from '../components/SEO';
 
 const mockData = {
     user: { 
-        name: 'Premium Professional', 
-        bio: 'Multi-disciplinary Engineer, Designer, and Digital Marketer with over 10 years of experience building enterprise-grade digital solutions.' 
+        name: 'Hilal Ahmad', 
+        bio: 'I am a Software Engineer specializing in web, desktop, SaaS, and AI-powered applications. I am currently working as a Software Developer at the Civil Secretariat Peshawar in the government sector, where I contribute to the development and maintenance of software solutions that support digital transformation and administrative efficiency. I also have teaching experience, which has strengthened my communication and mentoring skills. Additionally, I hold professional certifications, including Cisco Certified Network Associate (CCNA) and Microsoft Power Bi certifications, demonstrating my expertise in networking, cloud technologies, and modern IT solutions. I am passionate about leveraging technology and artificial intelligence to build innovative solutions that address real-world challenges.' 
     },
     analytics: [
         { id: 1, icon: 'users', metric_value: 961, metric_name: 'LinkedIn Connections', category: 'Network' },
@@ -26,8 +26,10 @@ const mockData = {
         { id: 3, title: 'Pulse Social App', description: 'A mobile-first social networking platform optimized for real-time engagement and premium community interactions.', category: 'UX/UI', tech_stack: ['React Native', 'Firebase'] }
     ],
     certifications: [
-        { id: 1, name: 'Azure Solutions Architect', issuing_organization: 'Microsoft', issue_date: '2023-01-01', credential_id: 'AZ-305' },
-        { id: 2, name: 'Cisco Certified Network Associate', issuing_organization: 'Cisco', issue_date: '2022-06-15', credential_id: 'CCNA-200-301' }
+        { id: 1, name: 'University of Kotali Training Certificate', issuing_organization: 'Verified Authority', issue_date: '2023-01-01', credential_id: 'UOF-KOTALI', link: '/hilalahmad.github.io/certs/UOF-KOTALI-TRAINING.jpg' },
+        { id: 2, name: 'Microsoft Certified: Power BI Data Analyst', issuing_organization: 'Microsoft', issue_date: '2023-06-15', credential_id: 'MS-POWER-BI', link: '/hilalahmad.github.io/certs/Microsoft-Power-bi-Certificate-1.pdf' },
+        { id: 3, name: 'Cisco Certified Network Associate', issuing_organization: 'CISCO', issue_date: '2022-08-20', credential_id: 'CCNA-200-301', link: '/hilalahmad.github.io/certs/Cisco-Certified-Network-Associate-certificate-8.pdf' },
+        { id: 4, name: 'Certified Hafiz-ul-Quran', issuing_organization: 'Verified Authority', issue_date: 'Lifetime Honors', credential_id: 'HAFIZ', link: '/hilalahmad.github.io/certs/HFAZ-CERTIFACTE.jpg' }
     ]
 };
 

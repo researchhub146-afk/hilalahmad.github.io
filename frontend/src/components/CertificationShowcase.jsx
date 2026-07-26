@@ -21,9 +21,9 @@ const CertificationShowcase = ({ certifications }) => {
                             <div className="p-3 glass rounded-xl bg-primary/10">
                                 <Award className="w-6 h-6 text-primary" />
                             </div>
-                            {cert.credential_url && (
+                            {cert.link && (
                                 <a
-                                    href={cert.credential_url}
+                                    href={cert.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-slate-500 hover:text-white transition-colors"
@@ -37,11 +37,15 @@ const CertificationShowcase = ({ certifications }) => {
                         <p className="text-primary/80 font-medium text-sm mb-4">{cert.issuing_organization}</p>
 
                         <div className="text-xs text-slate-500 flex items-center gap-2">
-                            <span>Issued: {new Date(cert.issue_date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
+                            <span>
+                                Issued: {isNaN(Date.parse(cert.issue_date)) 
+                                    ? cert.issue_date 
+                                    : new Date(cert.issue_date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                            </span>
                             {cert.credential_id && (
                                 <>
                                     <span className="w-1 h-1 rounded-full bg-slate-700"></span>
-                                    <span>ID: {cert.credential_id.substring(0, 8)}...</span>
+                                    <span>ID: {cert.credential_id.substring(0, 15)}</span>
                                 </>
                             )}
                         </div>
