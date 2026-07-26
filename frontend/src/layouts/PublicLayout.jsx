@@ -49,7 +49,7 @@ const PublicLayout = () => {
             <nav className="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/5 transition-all duration-300">
                 <div className="container mx-auto px-6 py-5 flex justify-between items-center">
                     <Link to="/" className="text-2xl font-black tracking-tighter hover:text-primary transition-all flex items-center gap-1">
-                        PRO<span className="text-primary italic">BRAND</span>
+                        HILAL<span className="text-primary italic">AHMAD</span>
                     </Link>
 
                     {/* Desktop Nav */}
@@ -143,7 +143,7 @@ const PublicLayout = () => {
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                         <div className="col-span-1 md:col-span-2">
-                            <h2 className="text-2xl font-black mb-6">PRO<span className="text-primary italic">BRAND</span></h2>
+                            <h2 className="text-2xl font-black mb-6">HILAL<span className="text-primary italic">AHMAD</span></h2>
                             <p className="text-slate-400 max-w-sm leading-relaxed mb-8">
                                 A high-performance personal branding platform for elite multi-disciplinary professionals. Standalone, enterprise-grade, and ready for production.
                             </p>
