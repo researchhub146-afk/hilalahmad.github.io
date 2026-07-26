@@ -24,9 +24,9 @@ const mockData = {
         { id: 4, icon: 'target', metric_value: 1943, metric_name: 'Portfolio Visits', category: 'Traffic' }
     ],
     projects: [
-        { id: 1, title: 'Nexus Cloud ERP', description: 'A comprehensive enterprise resource planning system with a focus on real-time data visualization and cloud scalability.', category: 'Development', tech_stack: ['Laravel 11', 'React 19', 'MySQL'] },
-        { id: 2, title: 'Aura Brand Identity', description: 'Sophisticated visual identity system for a sustainable lifestyle brand, including logo, typography, and brand guidelines.', category: 'Design', tech_stack: ['Adobe Illustrator', 'Figma'] },
-        { id: 3, title: 'Pulse Social App', description: 'A mobile-first social networking platform optimized for real-time engagement and premium community interactions.', category: 'UX/UI', tech_stack: ['React Native', 'Firebase'] }
+        { id: 1, title: 'Human Action Recognition AI', description: 'Deep learning application leveraging machine learning and computer vision to extract and assess deep features for accurate human action recognition.', category: 'AI & Data Science', tech_stack: ['Python', 'Computer Vision', 'Deep Learning'] },
+        { id: 2, title: 'Govt Citizen Portal Resolution', description: 'Managed and maintained software systems for the Civil Secretariat, resolving citizen complaints efficiently through digital transformation.', category: 'Software Maintenance', tech_stack: ['IT Management', 'Database Admin', 'Troubleshooting'] },
+        { id: 3, title: 'Inventory Management System', description: 'A robust desktop application designed for efficient inventory tracking, stock management, and automated reporting.', category: 'Development', tech_stack: ['C/C++', 'SQL', 'OOP'] }
     ],
     certifications: [
         { id: 1, name: 'University of Kotali Training Certificate', issuing_organization: 'Verified Authority', issue_date: '2023-01-01', credential_id: 'UOF-KOTALI', link: '/hilalahmad.github.io/certs/UOF-KOTALI-TRAINING.jpg' },
