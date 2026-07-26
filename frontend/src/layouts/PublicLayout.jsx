@@ -19,6 +19,28 @@ const PublicLayout = () => {
             setMousePosition({ x: e.clientX, y: e.clientY });
         };
         window.addEventListener('mousemove', updateMousePosition);
+
+        // Inject Google Translate script dynamically after the component mounts
+        const addGoogleTranslate = () => {
+            if (!document.getElementById('google-translate-script')) {
+                window.googleTranslateElementInit = () => {
+                    new window.google.translate.TranslateElement({
+                        pageLanguage: 'en',
+                        includedLanguages: 'ur,en',
+                        layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE
+                    }, 'google_translate_element');
+                };
+
+                const script = document.createElement('script');
+                script.id = 'google-translate-script';
+                script.type = 'text/javascript';
+                script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+                document.body.appendChild(script);
+            }
+        };
+        
+        addGoogleTranslate();
+
         return () => window.removeEventListener('mousemove', updateMousePosition);
     }, []);
 
