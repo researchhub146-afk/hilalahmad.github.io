@@ -109,8 +109,37 @@ const PublicLayout = () => {
                 <Outlet />
             </main>
 
+            {/* Elite CTA Section */}
+            <section className="relative py-32 overflow-hidden border-t border-white/5">
+                <div className="absolute inset-0 bg-gradient-to-b from-background to-primary/10 z-0"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+                
+                <div className="container mx-auto px-6 relative z-10 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
+                            Let's Build Something <br className="hidden md:block"/>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Amazing Together.</span>
+                        </h2>
+                        <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-12">
+                            Whether you need a robust enterprise system, an AI-powered solution, or a scalable web application, I bring the engineering excellence to make it happen.
+                        </p>
+                        <a 
+                            href="#contact" 
+                            className="inline-flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full text-lg font-black hover:scale-105 hover:bg-primary hover:text-white transition-all shadow-[0_0_40px_rgba(14,165,233,0.3)] hover:shadow-[0_0_60px_rgba(14,165,233,0.6)]"
+                        >
+                            Start a Conversation <MessageCircle className="w-6 h-6" />
+                        </a>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* Premium Footer */}
-            <footer className="bg-surface border-t border-white/5 py-20">
+            <footer className="bg-surface border-t border-white/5 py-20 relative z-20">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                         <div className="col-span-1 md:col-span-2">
@@ -131,7 +160,6 @@ const PublicLayout = () => {
                                 <li><a href="#projects" className="hover:text-white transition-colors">Portfolios</a></li>
                                 <li><a href="#certs" className="hover:text-white transition-colors">Qualifications</a></li>
                                 <li><a href="#skills" className="hover:text-white transition-colors">Expertise</a></li>
-                                <li><a href="/login" className="hover:text-white transition-colors">Admin Login</a></li>
                             </ul>
                         </div>
 
@@ -139,20 +167,20 @@ const PublicLayout = () => {
                             <h3 className="font-bold uppercase tracking-widest text-sm mb-6 text-primary">Status</h3>
                             <div className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
                                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                                Production Ready
+                                Available for Hire
                             </div>
                             <p className="mt-4 text-xs text-slate-500 leading-normal">
-                                Version 1.0.0 (Sanctum Secure)<br />
-                                Built with React 19 & Laravel 11
+                                Software Engineer (BPS-16)<br />
+                                MS Computer Science & AI
                             </p>
                         </div>
                     </div>
 
                     <div className="pt-8 border-t border-white/5 text-center md:text-left flex flex-col md:flex-row justify-between text-xs text-slate-500 uppercase tracking-widest gap-4">
-                        <p>&copy; {new Date().getFullYear()} Standalone Portfolio Platform. Built by Antigravity.</p>
+                        <p>&copy; {new Date().getFullYear()} Hilal Ahmad. All Rights Reserved.</p>
                         <div className="flex justify-center gap-6">
-                            <a href="#" className="hover:text-white">Privacy</a>
-                            <a href="#" className="hover:text-white">Terms</a>
+                            <a href="#" className="hover:text-white">Built with React</a>
+                            <a href="#" className="hover:text-white">Deployed on GitHub Pages</a>
                         </div>
                     </div>
                 </div>

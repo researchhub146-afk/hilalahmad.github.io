@@ -44,6 +44,18 @@ const HeroSection = ({ name }) => {
 
     return (
         <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
+            {/* Tech Grid Background Pattern */}
+            <div 
+                className="absolute inset-0 z-[-20] opacity-[0.03]"
+                style={{
+                    backgroundImage: `linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px)`,
+                    backgroundSize: '40px 40px'
+                }}
+            ></div>
+            
+            {/* Gradient Overlay for fading the grid */}
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-[-15]"></div>
+
             {/* Animated Background Blobs */}
             <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[150px] -z-10 animate-pulse"></div>
             <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[150px] -z-10 animate-pulse delay-700"></div>
