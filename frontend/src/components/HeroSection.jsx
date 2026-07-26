@@ -8,7 +8,7 @@ const HeroSection = ({ name }) => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
 
-    const roles = ['Software Engineer', 'Digital Marketer', 'Graphic Designer'];
+    const roles = ['Software Engineer', 'Machine Learning Expert', 'System Architect'];
 
     const socialLinks = [
         { icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>, href: 'https://wa.me/923110574105', color: 'hover:bg-[#25D366] hover:text-white hover:border-[#25D366]', title: 'WhatsApp' },
@@ -43,68 +43,110 @@ const HeroSection = ({ name }) => {
     }, [text, isDeleting, loopNum, typingSpeed]);
 
     return (
-        <section className="relative min-h-[80vh] flex flex-col items-center justify-center text-center overflow-hidden pt-20">
+        <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
             {/* Animated Background Blobs */}
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] -z-10 animate-pulse delay-700"></div>
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[150px] -z-10 animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[150px] -z-10 animate-pulse delay-700"></div>
 
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="z-10 flex flex-col items-center"
-            >
-                <div className="mb-8 relative">
-                    <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 p-1 bg-white/5">
-                        <img src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Profile" className="w-full h-full object-cover rounded-full" />
-                    </div>
-                </div>
-
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                    className="flex flex-wrap justify-center gap-4 mb-8 z-20"
+            <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                {/* Left Side: Text and CTA */}
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="flex flex-col text-center lg:text-left z-10 order-2 lg:order-1"
                 >
-                    {socialLinks.map((link, index) => (
-                        <motion.a
-                            key={index}
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            title={link.title}
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: 0.4 + (index * 0.1), type: 'spring', stiffness: 200 }}
-                            whileHover={{ scale: 1.15, rotate: link.title === 'WhatsApp' ? 10 : -10 }}
-                            whileTap={{ scale: 0.9 }}
-                            className={`p-3.5 bg-white/5 text-slate-300 rounded-full transition-colors shadow-lg border border-white/10 ${link.color}`}
-                        >
-                            {link.icon}
-                        </motion.a>
-                    ))}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
+                        className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 z-20"
+                    >
+                        {socialLinks.map((link, index) => (
+                            <motion.a
+                                key={index}
+                                href={link.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title={link.title}
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                transition={{ delay: 0.4 + (index * 0.1), type: 'spring', stiffness: 200 }}
+                                whileHover={{ scale: 1.15, rotate: link.title === 'WhatsApp' ? 10 : -10 }}
+                                whileTap={{ scale: 0.9 }}
+                                className={`p-3 bg-white/5 text-slate-300 rounded-full transition-colors shadow-lg border border-white/10 ${link.color}`}
+                            >
+                                {link.icon}
+                            </motion.a>
+                        ))}
+                    </motion.div>
+
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight leading-[1.1]">
+                        Hi, I'm <br className="hidden lg:block"/>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{name}</span>
+                    </h1>
+
+                    <div className="text-2xl md:text-3xl font-medium text-slate-300 h-10 mb-8">
+                        I am a <span className="text-white border-r-2 border-primary pr-1">{text}</span>
+                    </div>
+                    
+                    <p className="text-slate-400 max-w-xl mx-auto lg:mx-0 mb-10 text-lg leading-relaxed">
+                        Transforming complex problems into elegant, scalable software solutions. With an MS in Computer Science and years of full-stack experience, I engineer systems that matter.
+                    </p>
+
+                    <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <a href={`${import.meta.env.BASE_URL}Hilal_CV.pdf`} download="Hilal_Ahmad_CV.pdf" className="px-8 py-4 bg-gradient-to-r from-primary to-secondary rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-all duration-300 flex items-center gap-2 text-white">
+                            <Download className="w-5 h-5" /> Download CV
+                        </a>
+                        <a href="#projects" className="px-8 py-4 glass rounded-full font-bold hover:bg-white/10 transition-all duration-300 flex items-center gap-2 border border-white/20">
+                            View Projects
+                        </a>
+                    </div>
                 </motion.div>
 
-                <h1 className="text-6xl md:text-8xl font-black mb-6 tracking-tight">
-                    Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">{name}</span>
-                </h1>
+                {/* Right Side: Floating Avatar */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, type: "spring" }}
+                    className="z-10 order-1 lg:order-2 flex justify-center lg:justify-end perspective-1000"
+                >
+                    <motion.div 
+                        animate={{ 
+                            y: [0, -20, 0],
+                            rotateZ: [0, 2, -2, 0]
+                        }}
+                        transition={{ 
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96"
+                    >
+                        {/* Outer Glowing Ring */}
+                        <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-[spin_10s_linear_infinite]"></div>
+                        <div className="absolute inset-4 rounded-full border-2 border-secondary/30 animate-[spin_15s_linear_infinite_reverse]"></div>
+                        
+                        {/* Main Image Container */}
+                        <div className="absolute inset-8 rounded-full overflow-hidden border-4 border-white/10 shadow-[0_0_50px_rgba(14,165,233,0.3)] bg-surface flex items-center justify-center p-1">
+                            <img 
+                                src={`${import.meta.env.BASE_URL}profile.jpg`} 
+                                alt="Profile" 
+                                className="w-full h-full object-cover rounded-full hover:scale-110 transition-transform duration-500"
+                            />
+                        </div>
+                        
+                        {/* Decorative Badge */}
+                        <div className="absolute bottom-12 -right-4 glass px-4 py-2 rounded-full border border-white/20 shadow-xl flex items-center gap-2 backdrop-blur-md">
+                            <span className="w-3 h-3 bg-emerald-400 rounded-full animate-ping"></span>
+                            <span className="w-3 h-3 bg-emerald-400 rounded-full absolute"></span>
+                            <span className="text-sm font-bold ml-2">Available for Hire</span>
+                        </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="text-2xl md:text-4xl font-medium text-slate-300 h-10">
-                    I am a <span className="text-white border-r-2 border-primary pr-1">{text}</span>
-                </div>
-
-                <div className="mt-12 flex flex-wrap gap-4 justify-center">
-                    <a href={`${import.meta.env.BASE_URL}Hilal_CV.pdf`} download="Hilal_Ahmad_CV.pdf" className="px-8 py-4 bg-secondary rounded-full font-bold shadow-lg shadow-secondary/20 hover:scale-105 transition-transform flex items-center gap-2">
-                        <Download className="w-5 h-5" /> Download CV
-                    </a>
-                    <a href="#projects" className="px-8 py-4 bg-primary rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform flex items-center gap-2">
-                        View Projects
-                    </a>
-                    <a href="#contact" className="px-8 py-4 glass rounded-full font-bold hover:bg-white/10 transition-colors flex items-center gap-2">
-                        Contact Me
-                    </a>
-                </div>
-            </motion.div>
+            </div>
         </section>
     );
 };

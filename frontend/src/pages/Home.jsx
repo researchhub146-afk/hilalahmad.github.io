@@ -13,6 +13,7 @@ import EducationSection from '../components/EducationSection';
 import PublicationsSection from '../components/PublicationsSection';
 import TechMarquee from '../components/TechMarquee';
 import TestimonialsSection from '../components/TestimonialsSection';
+import ProjectModal from '../components/ProjectModal';
 
 const mockData = {
     user: { 
@@ -60,6 +61,7 @@ const mockData = {
 const Home = () => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [selectedProject, setSelectedProject] = useState(null);
 
     useEffect(() => {
         // Since we are deploying as a static site on GitHub Pages without a backend database,
@@ -97,15 +99,29 @@ const Home = () => {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {data?.projects.filter(p => p.category !== 'Design').map(project => (
-                            <div key={project.id} className="glass-card hover:border-primary/50 transition-colors group">
-                                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-slate-400 mb-6 line-clamp-3">{project.description}</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tech_stack?.map(tech => (
-                                        <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs rounded-full">
-                                            {tech}
-                                        </span>
-                                    ))}
+                            <div 
+                                key={project.id} 
+                                onClick={() => setSelectedProject(project)}
+                                className="glass-card hover:border-primary/50 cursor-pointer transition-colors group relative overflow-hidden flex flex-col h-full"
+                            >
+                                {/* Background glow effect on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-0 pointer-events-none"></div>
+                                
+                                <div className="z-10 flex-grow">
+                                    <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
+                                    <p className="text-slate-400 mb-6 line-clamp-3">{project.description}</p>
+                                </div>
+                                <div className="z-10 mt-auto">
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tech_stack?.map(tech => (
+                                            <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 text-slate-300 text-xs rounded-full">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <div className="mt-4 pt-4 border-t border-white/10 text-primary text-sm font-medium flex justify-between items-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                        View Details <span className="text-xl">→</span>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -124,6 +140,12 @@ const Home = () => {
                     &copy; {new Date().getFullYear()} {data?.user?.name}. Built with Laravel 11 & React 19.
                 </footer>
             </div>
+            
+            <ProjectModal 
+                isOpen={!!selectedProject} 
+                onClose={() => setSelectedProject(null)} 
+                project={selectedProject} 
+            />
         </div>
     );
 };
