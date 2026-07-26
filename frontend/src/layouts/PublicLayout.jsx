@@ -69,6 +69,7 @@ const PublicLayout = () => {
                         >
                             Hire Me
                         </a>
+                        <div id="google_translate_element" className="ml-2"></div>
                     </div>
 
                     {/* Mobile Toggle */}
@@ -177,7 +178,7 @@ const PublicLayout = () => {
                     </div>
 
                     <div className="pt-8 border-t border-white/5 text-center md:text-left flex flex-col md:flex-row justify-between text-xs text-slate-500 uppercase tracking-widest gap-4">
-                        <p>&copy; {new Date().getFullYear()} Hilal Ahmad. All Rights Reserved.</p>
+                        <p>&copy; {new Date().getFullYear()} Designed and developed by Software Engineer Hafiz Hilal Ahmad.</p>
                         <div className="flex justify-center gap-6">
                             <a href="#" className="hover:text-white">Built with React</a>
                             <a href="#" className="hover:text-white">Deployed on GitHub Pages</a>
