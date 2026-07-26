@@ -2,6 +2,32 @@ import { motion } from 'framer-motion';
 import { Award, ExternalLink } from 'lucide-react';
 
 const CertificationShowcase = ({ certifications }) => {
+    const getLogo = (org) => {
+        if (org?.toLowerCase().includes('microsoft')) {
+            return (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="2" width="9.5" height="9.5" fill="#f25022"/>
+                  <rect x="12.5" y="2" width="9.5" height="9.5" fill="#7fba00"/>
+                  <rect x="2" y="12.5" width="9.5" height="9.5" fill="#00a4ef"/>
+                  <rect x="12.5" y="12.5" width="9.5" height="9.5" fill="#ffb900"/>
+                </svg>
+            );
+        }
+        if (org?.toLowerCase().includes('cisco')) {
+            return (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-cyan-500">
+                    <rect x="1" y="12" width="2" height="6" fill="currentColor" />
+                    <rect x="5" y="8" width="2" height="10" fill="currentColor" />
+                    <rect x="9" y="3" width="2" height="15" fill="currentColor" />
+                    <rect x="13" y="3" width="2" height="15" fill="currentColor" />
+                    <rect x="17" y="8" width="2" height="10" fill="currentColor" />
+                    <rect x="21" y="12" width="2" height="6" fill="currentColor" />
+                </svg>
+            );
+        }
+        return <Award className="w-6 h-6 text-primary" />;
+    };
+
     return (
         <section className="py-24">
             <h2 className="text-4xl font-bold text-center mb-16 underline decoration-primary underline-offset-8">
@@ -19,7 +45,7 @@ const CertificationShowcase = ({ certifications }) => {
                     >
                         <div className="flex items-start justify-between mb-4">
                             <div className="p-3 glass rounded-xl bg-primary/10">
-                                <Award className="w-6 h-6 text-primary" />
+                                {getLogo(cert.issuing_organization)}
                             </div>
                             {cert.link && (
                                 <a
