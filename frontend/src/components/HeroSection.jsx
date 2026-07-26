@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Download, ExternalLink, Code, Briefcase } from 'lucide-react';
+import { Download, ExternalLink, Code, Briefcase, Phone } from 'lucide-react';
 
 const HeroSection = ({ name }) => {
     const [text, setText] = useState('');
@@ -53,10 +53,13 @@ const HeroSection = ({ name }) => {
                 </div>
 
                 <div className="flex gap-4 mb-8">
-                    <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-all shadow-lg" title="LinkedIn">
+                    <a href="https://wa.me/923110574105" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-green-500/20 hover:text-green-400 transition-all shadow-lg" title="WhatsApp (+92311-0574105)">
+                        <Phone className="w-5 h-5" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/hilal-ahmad" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-all shadow-lg" title="LinkedIn">
                         <Briefcase className="w-5 h-5" />
                     </a>
-                    <a href="#" className="p-3 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-all shadow-lg" title="GitHub">
+                    <a href="https://github.com/researchhub146-afk" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/5 rounded-full hover:bg-primary/20 hover:text-primary transition-all shadow-lg" title="GitHub">
                         <Code className="w-5 h-5" />
                     </a>
                 </div>
