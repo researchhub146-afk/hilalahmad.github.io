@@ -8,11 +8,14 @@ import ProjectGallery from '../components/ProjectGallery';
 import AnalyticsCharts from '../components/AnalyticsCharts';
 import ContactForm from '../components/ContactForm';
 import SEO from '../components/SEO';
+import ExperienceTimeline from '../components/ExperienceTimeline';
+import EducationSection from '../components/EducationSection';
+import PublicationsSection from '../components/PublicationsSection';
 
 const mockData = {
     user: { 
         name: 'Hilal Ahmad', 
-        bio: 'I am a Software Engineer specializing in web, desktop, SaaS, and AI-powered applications. I am currently working as a Software Developer at the Civil Secretariat Peshawar in the government sector, where I contribute to the development and maintenance of software solutions that support digital transformation and administrative efficiency. I also have teaching experience, which has strengthened my communication and mentoring skills. Additionally, I hold professional certifications, including Cisco Certified Network Associate (CCNA) and Microsoft Power Bi certifications, demonstrating my expertise in networking, cloud technologies, and modern IT solutions. I am passionate about leveraging technology and artificial intelligence to build innovative solutions that address real-world challenges.' 
+        bio: 'I am a Software Engineer specializing in web, desktop, SaaS, and AI-powered applications. I currently work as a Software Developer at the Civil Secretariat Peshawar, contributing to digital transformation in the government sector. Alongside engineering, I have a deep passion for teaching and mentorship, having served as a Vice Principal and Computer Science Lecturer. My robust academic background (MS Computer Science, M.ED, B.ED) has strengthened my ability to train and lead teams. Additionally, I hold certifications like Cisco CCNA and Microsoft Power BI, demonstrating my expertise in networking, cloud technologies, and modern IT solutions. I am committed to leveraging technology to build innovative solutions that address real-world challenges.' 
     },
     analytics: [
         { id: 1, icon: 'users', metric_value: 961, metric_name: 'LinkedIn Connections', category: 'Network' },
@@ -30,6 +33,22 @@ const mockData = {
         { id: 2, name: 'Microsoft Certified: Power BI Data Analyst', issuing_organization: 'Microsoft', issue_date: '2023-06-15', credential_id: 'MS-POWER-BI', link: '/hilalahmad.github.io/certs/Microsoft-Power-bi-Certificate-1.pdf' },
         { id: 3, name: 'Cisco Certified Network Associate', issuing_organization: 'CISCO', issue_date: '2022-08-20', credential_id: 'CCNA-200-301', link: '/hilalahmad.github.io/certs/Cisco-Certified-Network-Associate-certificate-8.pdf' },
         { id: 4, name: 'Certified Hafiz-ul-Quran', issuing_organization: 'Verified Authority', issue_date: 'Lifetime Honors', credential_id: 'HAFIZ', link: '/hilalahmad.github.io/certs/HFAZ-CERTIFACTE.jpg' }
+    ],
+    experience: [
+        { period: '01/01/2015 - 30/07/2016', title: 'Vice Principal', organization: 'Iqra Rozaat-ul-Sibyan School Nowshera', responsibilities: ['Managed Matric program and coordinated public dealings.', 'Trained staff and students on professional courses.'] },
+        { period: '18/02/2018 - 30/10/2018', title: 'Civil Computer Operator (Bps-14)', organization: 'Pak Army Signal Training Center Kohat Cantonment', responsibilities: ['Monitored computer systems and networks for optimal performance.', 'Managed data storage, backups, and security measures.', 'Diagnosed and resolved hardware/software issues minimizing downtime.'] },
+        { period: '31/08/2019 - 31/01/2021', title: 'Computer Science Lecturer (Bps-17)', organization: 'Peshawar Model Degree College Boys', responsibilities: ['Delivered engaging lectures and labs for computer science students.', 'Managed network infrastructure, security, and hardware maintenance.', 'Provided technical support and administered server resources.'] },
+        { period: '01/03/2021 - 23/11/2021', title: 'Computer Operator (Bps-16)', organization: 'Quality Assurance Programme Higher Education Dept KPK', responsibilities: ['System monitoring and maintenance to ensure optimal functionality.', 'Data administration, backup, and security reporting.', 'Technical support for faculty, staff, and students.'] },
+        { period: '24/11/2021 - Current', title: 'Computer Operator (Bps-16)', organization: 'Civil Secretariat Home Department Govt of KPK', responsibilities: ['Troubleshooting of networking issues and hardware resources.', 'Assess software maintenance and resolve citizen portal complaints.', 'Inspect surveillance systems of CCTV cameras.'] }
+    ],
+    education: [
+        { period: '2016 - 2019', degree: 'MS Computer Science', institution: 'Islamia College University Peshawar', location: 'Peshawar, Pakistan', grade: '3.38/4.00', thesis: 'Deep Features Assessment for Human Action Recognition Application (Machine Learning & CV)' },
+        { period: '2011 - 2015', degree: 'Bachelor of Science in Computer Science', institution: 'The University of Agriculture KPK', location: 'Peshawar, Pakistan', grade: '3.21/4.00', thesis: 'Inventory Management System' },
+        { period: '2016 - 2018', degree: 'Master of Education (M.ED)', institution: 'Allama Iqbal Open University', location: 'Islamabad, Pakistan', grade: '769/1200' },
+        { period: '2012 - 2017', degree: 'Bachelor of Education (B.ED) & C.T.', institution: 'Allama Iqbal Open University', location: 'Islamabad, Pakistan', grade: 'Pass' }
+    ],
+    publications: [
+        { year: '2022', title: 'Effective Video Summarization Approach Based on Visual Attention', authors: 'Hilal Ahmad, Habib Ullah Khan, Sikandar Ali, Syed Ijaz Ur Rahman, Fazli Wahid', link: 'https://www.techscience.com/cmc/v71n1/45400', abstract: 'Video summarization is applied to reduce redundancy and develop a concise representation of key frames in the video, more recently, video summaries have been used through visual attention modeling. We propose a method based on KFE (key frame extraction) technique using dynamic visual highlighting based on the temporal gradient. The dynamic and static visual attention metrics are merged by means of a non-linear weighted fusion technique.', keywords: ['KFE', 'Video Summarization', 'Visual Saliency', 'Attention Model', 'Computer Vision'] }
     ]
 };
 
@@ -38,16 +57,10 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        api.get('/portfolio-data')
-            .then(res => {
-                setData(res.data);
-                setLoading(false);
-            })
-            .catch(err => {
-                console.error("Backend not running, using mock data.", err);
-                setData(mockData);
-                setLoading(false);
-            });
+        // Since we are deploying as a static site on GitHub Pages without a backend database,
+        // we directly use the highly detailed professional mockData.
+        setData(mockData);
+        setLoading(false);
     }, []);
 
     if (loading) return <div className="flex h-screen items-center justify-center">Loading...</div>;
@@ -63,6 +76,12 @@ const Home = () => {
 
             <div className="container mx-auto px-4 pb-24">
                 <div id="skills"><SkillMatrix /></div>
+
+                <div id="experience"><ExperienceTimeline experience={data?.experience} /></div>
+                
+                <div id="education"><EducationSection education={data?.education} /></div>
+
+                <div id="publications"><PublicationsSection publications={data?.publications} /></div>
 
                 <div id="analytics"><AnalyticsCharts analytics={data?.analytics} /></div>
 

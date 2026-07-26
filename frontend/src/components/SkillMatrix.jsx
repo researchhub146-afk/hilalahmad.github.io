@@ -4,28 +4,28 @@ import { Layers, Monitor, Target, Palette } from 'lucide-react';
 const SkillMatrix = () => {
     const quadrants = [
         {
-            title: 'Core Engineering',
+            title: 'Core Software & AI',
             icon: <Monitor className="w-8 h-8 text-blue-400" />,
-            skills: ['Laravel 11', 'React 19', 'Python/Django', 'Systems Architecture', 'MySQL/PostgreSQL'],
+            skills: ['Python / MATLAB', 'C/C++ / OOP', 'SQL / Database Admin', 'AI / Machine Learning', 'Computer Vision'],
             gradient: 'from-blue-500/20 to-blue-600/20'
         },
         {
-            title: 'Digital Marketing',
+            title: 'Network & Security',
+            icon: <Layers className="w-8 h-8 text-emerald-400" />,
+            skills: ['CISCO CCNA Routing', 'LAN / WAN Architecture', 'OSPF / BGP / IPv6', 'VLAN & ACL Security', 'Hardware Troubleshooting'],
+            gradient: 'from-emerald-500/20 to-emerald-600/20'
+        },
+        {
+            title: 'Systems Administration',
             icon: <Target className="w-8 h-8 text-rose-400" />,
-            skills: ['Performance Marketing', 'SEO Optimization', 'Google Ads', 'Analytics & Power BI', 'Lead Gen'],
+            skills: ['Server Monitoring', 'Data Backup & Recovery', 'Disaster Recovery', 'User Privilege Mgt.', 'IT Resource Allocation'],
             gradient: 'from-rose-500/20 to-rose-600/20'
         },
         {
-            title: 'Graphic Design',
+            title: 'Leadership & Design',
             icon: <Palette className="w-8 h-8 text-violet-400" />,
-            skills: ['UI/UX (Figma)', 'Adobe Creative Suite', 'Brand Identity', 'Typography', 'Motion Design'],
+            skills: ['Technical Mentorship', 'Curriculum Development', 'Adobe Photoshop (Expert)', 'MS Office Suite', 'Content Writing'],
             gradient: 'from-violet-500/20 to-violet-600/20'
-        },
-        {
-            title: 'Network & Cloud',
-            icon: <Layers className="w-8 h-8 text-emerald-400" />,
-            skills: ['CISCO CCNA', 'Microsoft Azure', 'VPS Management', 'CI/CD Pipelines', 'Security Compliance'],
-            gradient: 'from-emerald-500/20 to-emerald-600/20'
         }
     ];
 
